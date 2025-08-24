@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f1020">
+  <title>Miguel na Ilha — Jogo de Escolhas</title>
+  <meta name="description" content="Visual novel survival: Miguel chega a uma vila cercada de criaturas. Faça escolhas, ganhe respeito, sobreviva.">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" href="./icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+  <link rel="preload" href="./story.json" as="fetch" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="./icons/icon-192.png" alt="MI" class="logo">
+      <div>
+        <h1>Miguel na Ilha</h1>
+        <p class="tag">Jogo de escolhas • PWA offline</p>
+      </div>
+    </div>
+    <nav class="actions">
+      <button id="btnInstall" class="ghost">Instalar</button>
+      <button id="btnExport" title="Exportar progresso">Exportar</button>
+      <label for="fileImport" class="ghost">Importar</label>
+      <input id="fileImport" type="file" accept=".json" hidden>
+      <button id="btnReset" class="danger">Reiniciar</button>
+    </nav>
+  </header>
+
+  <main id="app" class="container">
+    <section class="hud">
+      <div class="stat"><span>⚡</span> Vigor: <b id="statVigor">--</b></div>
+      <div class="stat"><span>🤝</span> Bride: <b id="statBride">--</b></div>
+      <div class="stat"><span>🏰</span> Vila: <b id="statRep">--</b></div>
+      <div class="stat"><span>🧭</span> Cap.: <b id="statCap">--</b></div>
+    </section>
+
+    <article class="card scene">
+      <div id="sceneMeta" class="scene-meta"></div>
+      <div id="sceneText" class="scene-text"></div>
+
+      <div id="lyroBox" class="lyro off">
+        <div class="lyro-head">Notas da Lyro</div>
+        <div id="lyroText" class="lyro-body"></div>
+      </div>
+
+      <div id="choices" class="choices"></div>
+    </article>
+
+    <details class="logwrap">
+      <summary>📝 Registro</summary>
+      <div id="log"></div>
+    </details>
+  </main>
+
+  <footer class="footer">
+    <div>v1.0 • PWA offline • <a href="#" id="docLink">README</a></div>
+  </footer>
+
+  <script src="./game.js" defer></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./service-worker.js').catch(console.error);
+      });
+    }
+  </script>
+</body>
+</html>
