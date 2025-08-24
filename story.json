@@ -1,0 +1,165 @@
+{
+  "version": "1.0",
+  "about": "História de Miguel na Ilha até o julgamento público; escolhas afetam vigor/reputação/rel. com Bride.",
+  "nodes": [
+    {"id":"intro-navio","title":"Navio encalhado, cabine estranha","time":"10:00",
+     "text":"Acordo com gosto de ferrugem na boca. Madeira velha, cheiro de sal e mofo. Meu smartwatch marca 10:00 — perdi 13 horas. Duas garrafas de água. Porta range.\nUma sombra passa lá fora.",
+     "lyro":"Hipótese: deslocamento forçado. Prioridade: água e risco. Conserva vigor.",
+     "choices":[
+       {"text":"Falo baixo: “Tem alguém aí?”","next":"contato-margem","effects":{"vigor":-2}},
+       {"text":"Fico em silêncio e saio devagar.","next":"contato-margem","effects":{"vigor":0}}
+     ]},
+    {"id":"contato-margem","title":"Primeiro contato na margem","time":"10:17",
+     "text":"Vejo um cara correndo pela areia, exausto. Ele me vê, mão na arma. “Abre e fecha os olhos. Agora.”",
+     "choices":[
+       {"text":"Obedeço sem drama.","next":"teste-humanidade","effects":{"rep":1}},
+       {"text":"Respondo irritado: “Pra quê?”","next":"teste-humanidade","effects":{"rep":-1,"vigor":-1}}
+     ]},
+    {"id":"teste-humanidade","title":"Teste de humanidade","time":"10:27",
+     "text":"Faço o teste. Ele baixa a arma: “Sou Robby. Sozinho você não passa da noite. Vem.”",
+     "choices":[
+       {"text":"Vou com Robby.","next":"travessia-mare","effects":{"rep":1}},
+       {"text":"Pergunto sobre ‘eles’.","next":"travessia-mare","effects":{"rep":0}}
+     ]},
+    {"id":"travessia-mare","title":"A maré manda na vida","time":"12:47",
+     "text":"Duas horas até o estreito. “Só abre 6–9h e 11–15h”, diz Robby. Atravessamos a tempo.",
+     "lyro":"Janela de mobilidade definida. Regra de ouro.",
+     "choices":[
+       {"text":"Guardar força e observar.","next":"chegada-vila","effects":{"vigor":2}},
+       {"text":"Acelerar o passo.","next":"chegada-vila","effects":{"vigor":-3}}
+     ]},
+    {"id":"chegada-vila","title":"Portões da B12678","time":"13:12",
+     "text":"Torres de vigia, portão de madeira. Gritos a Robby. Sou aceito por estar com ele.",
+     "choices":[
+       {"text":"Me apresento humilde.","next":"instalacao-cabana","effects":{"rep":1}},
+       {"text":"Fico na minha.","next":"instalacao-cabana","effects":{"vigor":1}}
+     ]},
+    {"id":"instalacao-cabana","title":"Cabana e perguntas","time":"13:30",
+     "text":"Uma senhora me coloca numa cabana. “Tem dúvidas?” Maré, monstros e um Alfa inteligente entram na conversa.",
+     "choices":[
+       {"text":"Pergunto de comida e água.","next":"revela-velha"},
+       {"text":"Pergunto do Alfa.","next":"revela-velha"}
+     ]},
+    {"id":"revela-velha","title":"Revelações da velha","time":"14:05",
+     "text":"Caos no continente há um ano. Maré dita travessia. Monstros: maioria burra; há um Alfa.",
+     "choices":[
+       {"text":"Agradeço a orientação.","next":"treino-tarde","effects":{"rep":1}},
+       {"text":"Vou treinar sem papo.","next":"treino-tarde","effects":{"rep":-1}}
+     ]},
+    {"id":"treino-tarde","title":"Treino: arco e corrida","time":"tarde",
+     "text":"Falho no arco. Compenso com 1h30 de corrida. Refeição coletiva: peixe, batata, cenoura.",
+     "choices":[
+       {"text":"Foco resistência.","next":"noite-bride","effects":{"vigor":3}},
+       {"text":"Insisto no arco cansado.","next":"noite-bride","effects":{"vigor":-2}}
+     ]},
+    {"id":"noite-bride","title":"Bride entra em cena","time":"noite",
+     "text":"Bride: “Amanhã você vem comigo.” Em casa, a mãe confusa fala de ‘vovô e cachorro’.",
+     "choices":[
+       {"text":"Respeito com a mãe.","next":"missao-equipec","effects":{"bride":2,"rep":1}},
+       {"text":"Só observo.","next":"missao-equipec"}
+     ]},
+    {"id":"missao-equipec","title":"Primeira missão: Equipe C","time":"dia seguinte",
+     "text":"Equipe: Bride, Conor (33), Ryan (14) e eu. Um gordo surge. Ryan erra; Bride finaliza no pescoço.",
+     "choices":[
+       {"text":"Admito nervosismo.","next":"casa-amarrado","effects":{"vigor":-2,"bride":1}},
+       {"text":"Pago de confiante.","next":"casa-amarrado","effects":{"bride":-1}}
+     ]},
+    {"id":"casa-amarrado","title":"O teste sujo","time":"manhã",
+     "text":"Casa isolada. Bride obriga: “Acaba com o rápido amarrado.” A mão treme.",
+     "lyro":"Rito de passagem: mente fria, mão firme.",
+     "choices":[
+       {"text":"Finalizo sem hesitar.","next":"cidade-fantasma","effects":{"vigor":-3,"bride":2}},
+       {"text":"Hesito, mas faço.","next":"cidade-fantasma","effects":{"vigor":-4,"bride":1}}
+     ]},
+    {"id":"cidade-fantasma","title":"Cidade pequena, botim","time":"tarde",
+     "text":"Paralelizamos busca. Ferramentas e cordas; rádio quebrado e fio; bateria e sementes.",
+     "choices":[
+       {"text":"Reforço rotas de fuga.","next":"ataque-rua","effects":{"rep":1}},
+       {"text":"Vasculhar mais uma casa.","next":"ataque-rua","effects":{"vigor":-2}}
+     ]},
+    {"id":"ataque-rua","title":"Ataque coordenado","time":"tarde",
+     "text":"Horda surge. Acertei a coxa; Conor finaliza. Bride mata dois.",
+     "choices":[
+       {"text":"Cubro Ryan e peço calma.","next":"queda-ryan","effects":{"rep":1}},
+       {"text":"Avanço confiante demais.","next":"queda-ryan","effects":{"vigor":-4,"rep":-1}}
+     ]},
+    {"id":"queda-ryan","title":"Erro fatal","time":"tarde",
+     "text":"Ryan age sozinho, erra e morre brutalmente.",
+     "choices":[
+       {"text":"Seguro Bride e foco.","next":"alfa-aparece","effects":{"bride":1}},
+       {"text":"Entro em choque.","next":"alfa-aparece","effects":{"vigor":-3}}
+     ]},
+    {"id":"alfa-aparece","title":"O Alfa","time":"tarde",
+     "text":"2,10m, pelos marrons. Ergue a cabeça de Ryan como troféu.",
+     "lyro":"Liderança inteligente. É guerra estratégica.",
+     "choices":[
+       {"text":"Recuar e trancar 2º andar.","next":"refugio-casa","effects":{"vigor":-2,"bride":1}},
+       {"text":"Buscar rota lateral.","next":"refugio-casa","effects":{"vigor":-3}}
+     ]},
+    {"id":"refugio-casa","title":"Casa trancada","time":"noite",
+     "text":"Barricamos no segundo andar. Noite longa.",
+     "choices":[
+       {"text":"Guardar energia.","next":"missao-carro","effects":{"vigor":2}},
+       {"text":"Vigiar janelas.","next":"missao-carro","effects":{"vigor":-5}}
+     ]},
+    {"id":"missao-carro","title":"Plano do carro e mercado","time":"dias depois",
+     "text":"Grupo maior com Camila, Roger, Raimer e outros. Robby revela carro. Galpão explode. Cilia é isca; Bride resgata.",
+     "choices":[
+       {"text":"Lidero retirada tática.","next":"mercado-busca","effects":{"rep":2}},
+       {"text":"Fico com Bride.","next":"mercado-busca","effects":{"bride":1}}
+     ]},
+    {"id":"mercado-busca","title":"Supermercado","time":"tarde",
+     "text":"Enlatados; freezer com corpo. Bride some e volta com remédios (para a mãe).",
+     "choices":[
+       {"text":"Guardo o segredo do Bride.","next":"retorno-139","effects":{"bride":2}},
+       {"text":"Cobro explicações em privado.","next":"retorno-139","effects":{"rep":1}}
+     ]},
+    {"id":"retorno-139","title":"Retorno cronometrado","time":"1:39",
+      "text":"Conor se fere; Robby nega ajuda. Voltamos pressionados pela maré.",
+      "choices":[
+        {"text":"Improviso curativo.","next":"execucao-conor","effects":{"rep":1}},
+        {"text":"Sigo o plano.","next":"execucao-conor","effects":{"vigor":1}}
+      ]},
+    {"id":"execucao-conor","title":"Espetáculo de poder","time":"noite seguinte",
+     "text":"Conor infectado. Robby o executa em público.",
+     "choices":[
+       {"text":"Encaro Robby.","next":"queda-cilia","effects":{"rep":1}},
+       {"text":"Observo o público.","next":"queda-cilia"}
+     ]},
+    {"id":"queda-cilia","title":"Cilia desaba","time":"logo após",
+     "text":"Cilia acusada; dor na cintura; cai. Mãe do Bride a chama de ‘irmã’. Roger tenta afastar; Bride toma a arma.",
+     "choices":[
+       {"text":"Protejo as duas.","next":"julgamento-publico","effects":{"bride":2,"rep":1}},
+       {"text":"Seguro a multidão.","next":"julgamento-publico","effects":{"rep":2}}
+     ]},
+    {"id":"julgamento-publico","title":"Julgamento público","time":"noite",
+     "text":"Raimer pede julgamento neutro. O povo me escolhe juiz.",
+     "lyro":"Decisão define governança e reputação.",
+     "choices":[
+       {"text":"Suspender Robby.","next":"sentencas","effects":{"rep":2}},
+       {"text":"Só desculpas públicas.","next":"sentencas","effects":{"rep":-1}}
+     ]},
+    {"id":"sentencas","title":"Sentenças","time":"noite",
+     "text":"Roger punido à torre; arma confiscada a Camila; Cilia sob Bride. Metade aprova, metade engole seco.",
+     "choices":[
+       {"text":"Camila+Bride líderes interinos.","next":"pos-julgamento","effects":{"rep":1,"bride":1}},
+       {"text":"Conselho com votos semanais.","next":"pos-julgamento","effects":{"rep":1}}
+     ]},
+    {"id":"pos-julgamento","title":"Depois do caos","time":"21:13",
+     "text":"Recebo o relógio de Robby. A vila respira, mas nada é igual.",
+     "choices":[
+       {"text":"Levar Cilia com Bride.","next":"casa-bride-noite","effects":{"bride":1}},
+       {"text":"Falar com Camila.","next":"casa-bride-noite","effects":{"rep":1}}
+     ]},
+    {"id":"casa-bride-noite","title":"Casa do Bride","time":"noite",
+     "text":"Cilia com dor na cintura e fraqueza nas pernas. Dipirona. A mãe a chama de irmã.",
+     "choices":[
+       {"text":"Garantir suprimentos.","next":"fim-9145","effects":{"rep":1}},
+       {"text":"Silêncio e presença.","next":"fim-9145","effects":{"bride":1}}
+     ]},
+    {"id":"fim-9145","title":"Silêncio às 9:45","time":"21:45",
+     "text":"Volto à cabana. Amanhã é outro campo minado.",
+     "choices":[{"text":"Encerrar (fim do Episódio 1).","next":"fim-9145"}]
+    }
+  ]
+}
