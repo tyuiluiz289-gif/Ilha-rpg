@@ -1,6 +1,8 @@
 {
+  "id": "miguel-ilha",
   "name": "Miguel na Ilha — Jogo de Escolhas",
   "short_name": "Ilha",
+  "description": "Jogo de narrativa interativa e sobrevivência. Miguel chega a uma vila cercada por criaturas e suas escolhas definem quem vive, quem morre e como a vila evolui.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
